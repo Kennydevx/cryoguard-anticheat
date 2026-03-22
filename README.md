@@ -1,14 +1,14 @@
 # 🛡️ Cryo-Corona: CryoGuard Anti-Cheat
-### Behavioral Anomaly Detection for Modern Gaming
+### Next-Gen Behavioral Analytics for Web & Enterprise
 
-CryoGuard is a next-generation anti-cheat agent that utilizes latent space analysis to identify cheating patterns (aimbots, wallhacks, macros) without intrusive kernel drivers. It focuses on the "intent" behind actions rather than just file signatures.
+CryoSense goes beyond traditional analytics, using proprietary AI architectures to understand user intent, fatigue, and engagement levels based on high-frequency micro-interactions. It focuses on the "intent" behind actions.
 
 ---
 
 ## 🚀 Key Features
-- **Heuristic Pattern Matching**: Detects non-human movement and input timing.
+- **Heuristic Pattern Analysis**: Detects non-human movement and input timing.
 - **No Performance Impact**: Runs as a lightweight side-car process.
-- **C++ Core**: Powered by high-speed neural kernels for sub-millisecond scoring.
+- **Proprietary AI Core**: Powered by high-speed kernels for sub-millisecond scoring.
 - **Easy Integration**: Simple JSON/gRPC API for game servers.
 
 ## 📦 Installation
