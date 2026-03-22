@@ -1,4 +1,4 @@
-# 🛡️ Cryo-Corona: CryoGuard Anti-Cheat
+# 🛡️ Cryo: CryoGuard Anti-Cheat
 ### Next-Gen Behavioral Analytics for Web & Enterprise
 
 CryoSense goes beyond traditional analytics, using proprietary AI architectures to understand user intent, fatigue, and engagement levels based on high-frequency micro-interactions. It focuses on the "intent" behind actions.
@@ -32,4 +32,4 @@ if result['anomaly_score'] > 0.8:
 
 ---
 **Developed by Kennedy Guimaraes**  
-© 2026 Cryo-Corona Ecosystem. All rights reserved.
+© 2026 Cryo Ecosystem. All rights reserved.
