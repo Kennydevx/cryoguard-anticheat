@@ -20,7 +20,7 @@ def load_config():
     """Loads configuration from config.json if available."""
     import json
     config = {
-        "server": "api.cryo-saas.com:50505",
+        "server": "localhost:50505",
         "api_key": "71e6236b046a8b8c72fee2dd5285a9c0",
         "threshold": 0.85
     }
@@ -105,18 +105,14 @@ class CryoGuard:
 
         # Register all players
         try:
-            pb_units = [
-                cryo_pb2.UnitData(
-                    unit_id=pid,
-                    z_state=cryo_pb2.FloatArray(values=[0.0] * 5)
-                ) for pid in player_ids
-            ]
-            req = cryo_pb2.FastStepRequest(
-                api_key=self.api_key,
-                session_id=self._session_id,
-                register_units=pb_units
-            )
-            self._stub.FastStep(req, timeout=10)
+            for pid in player_ids:
+                req = cryo_pb2.SpawnEntityRequest(
+                    api_key=self.api_key,
+                    session_id=self._session_id,
+                    entity_id=pid,
+                    state_vector=cryo_pb2.FloatArray(values=[0.0] * 5)
+                )
+                self._stub.SpawnEntity(req, timeout=10)
             self._last_pos.clear()
             self._flag_counts.clear()
             log.info(f"Match {match_id} started with {len(player_ids)} players")
@@ -168,7 +164,7 @@ class CryoGuard:
                 state_updates=updates
             )
             resp = self._stub.FastStep(req, timeout=5)
-            surprise = resp.surprise
+            surprise = resp.variance
         except Exception as e:
             log.error(f"Engine call failed for {player_id}: {e}")
             return {"flagged": False, "surprise": 0.0, "reason": None, "flag_count": 0}

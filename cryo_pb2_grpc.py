@@ -26,7 +26,7 @@ if _version_not_supported:
 
 
 class CryoEngineStub(object):
-    """── Service ───────────────────────────────────────────────────
+    """── Service ──────────────────────────────────────────────────
 
     """
 
@@ -36,16 +36,6 @@ class CryoEngineStub(object):
         Args:
             channel: A grpc.Channel.
         """
-        self.FastStep = channel.unary_unary(
-                '/cryo.CryoEngine/FastStep',
-                request_serializer=cryo__pb2.FastStepRequest.SerializeToString,
-                response_deserializer=cryo__pb2.FastStepResponse.FromString,
-                _registered_method=True)
-        self.GetReport = channel.unary_unary(
-                '/cryo.CryoEngine/GetReport',
-                request_serializer=cryo__pb2.ReportRequest.SerializeToString,
-                response_deserializer=cryo__pb2.ReportResponse.FromString,
-                _registered_method=True)
         self.CreateSession = channel.unary_unary(
                 '/cryo.CryoEngine/CreateSession',
                 request_serializer=cryo__pb2.Empty.SerializeToString,
@@ -56,37 +46,148 @@ class CryoEngineStub(object):
                 request_serializer=cryo__pb2.ControlRequest.SerializeToString,
                 response_deserializer=cryo__pb2.Empty.FromString,
                 _registered_method=True)
+        self.FastStep = channel.unary_unary(
+                '/cryo.CryoEngine/FastStep',
+                request_serializer=cryo__pb2.FastStepRequest.SerializeToString,
+                response_deserializer=cryo__pb2.FastStepResponse.FromString,
+                _registered_method=True)
+        self.Consolidate = channel.unary_unary(
+                '/cryo.CryoEngine/Consolidate',
+                request_serializer=cryo__pb2.ConsolidateRequest.SerializeToString,
+                response_deserializer=cryo__pb2.ConsolidateResponse.FromString,
+                _registered_method=True)
+        self.SpawnEntity = channel.unary_unary(
+                '/cryo.CryoEngine/SpawnEntity',
+                request_serializer=cryo__pb2.SpawnEntityRequest.SerializeToString,
+                response_deserializer=cryo__pb2.SpawnEntityResponse.FromString,
+                _registered_method=True)
+        self.RemoveEntity = channel.unary_unary(
+                '/cryo.CryoEngine/RemoveEntity',
+                request_serializer=cryo__pb2.RemoveEntityRequest.SerializeToString,
+                response_deserializer=cryo__pb2.Empty.FromString,
+                _registered_method=True)
+        self.RelateEntities = channel.unary_unary(
+                '/cryo.CryoEngine/RelateEntities',
+                request_serializer=cryo__pb2.RelateEntitiesRequest.SerializeToString,
+                response_deserializer=cryo__pb2.Empty.FromString,
+                _registered_method=True)
+        self.PredictNextState = channel.unary_unary(
+                '/cryo.CryoEngine/PredictNextState',
+                request_serializer=cryo__pb2.PredictNextStateRequest.SerializeToString,
+                response_deserializer=cryo__pb2.PredictNextStateResponse.FromString,
+                _registered_method=True)
+        self.SimulateWhatIf = channel.unary_unary(
+                '/cryo.CryoEngine/SimulateWhatIf',
+                request_serializer=cryo__pb2.SimulateWhatIfRequest.SerializeToString,
+                response_deserializer=cryo__pb2.SimulateWhatIfResponse.FromString,
+                _registered_method=True)
+        self.PlanTrajectory = channel.unary_unary(
+                '/cryo.CryoEngine/PlanTrajectory',
+                request_serializer=cryo__pb2.PlanTrajectoryRequest.SerializeToString,
+                response_deserializer=cryo__pb2.PlanTrajectoryResponse.FromString,
+                _registered_method=True)
+        self.GetAgentPerspective = channel.unary_unary(
+                '/cryo.CryoEngine/GetAgentPerspective',
+                request_serializer=cryo__pb2.GetAgentPerspectiveRequest.SerializeToString,
+                response_deserializer=cryo__pb2.GetAgentPerspectiveResponse.FromString,
+                _registered_method=True)
+        self.GetReport = channel.unary_unary(
+                '/cryo.CryoEngine/GetReport',
+                request_serializer=cryo__pb2.ReportRequest.SerializeToString,
+                response_deserializer=cryo__pb2.ReportResponse.FromString,
+                _registered_method=True)
+        self.RetrieveMemory = channel.unary_unary(
+                '/cryo.CryoEngine/RetrieveMemory',
+                request_serializer=cryo__pb2.RetrieveMemoryRequest.SerializeToString,
+                response_deserializer=cryo__pb2.RetrieveMemoryResponse.FromString,
+                _registered_method=True)
 
 
 class CryoEngineServicer(object):
-    """── Service ───────────────────────────────────────────────────
+    """── Service ──────────────────────────────────────────────────
 
     """
 
-    def FastStep(self, request, context):
-        """Principal endpoint for high-frequency RL steps
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def GetReport(self, request, context):
-        """Get full engine metrics and consolidation logs
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
     def CreateSession(self, request, context):
-        """Management
+        """Lifecycle
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def SetControl(self, request, context):
-        """Dynamic Control (Frozen mode, etc.)
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def FastStep(self, request, context):
+        """Core Simulation Loop
         """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def Consolidate(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def SpawnEntity(self, request, context):
+        """Entity Management
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def RemoveEntity(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def RelateEntities(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def PredictNextState(self, request, context):
+        """Foresight & Counterfactuals
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def SimulateWhatIf(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def PlanTrajectory(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetAgentPerspective(self, request, context):
+        """Epistemology
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetReport(self, request, context):
+        """Memory & Reporting
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def RetrieveMemory(self, request, context):
+        """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -94,16 +195,6 @@ class CryoEngineServicer(object):
 
 def add_CryoEngineServicer_to_server(servicer, server):
     rpc_method_handlers = {
-            'FastStep': grpc.unary_unary_rpc_method_handler(
-                    servicer.FastStep,
-                    request_deserializer=cryo__pb2.FastStepRequest.FromString,
-                    response_serializer=cryo__pb2.FastStepResponse.SerializeToString,
-            ),
-            'GetReport': grpc.unary_unary_rpc_method_handler(
-                    servicer.GetReport,
-                    request_deserializer=cryo__pb2.ReportRequest.FromString,
-                    response_serializer=cryo__pb2.ReportResponse.SerializeToString,
-            ),
             'CreateSession': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateSession,
                     request_deserializer=cryo__pb2.Empty.FromString,
@@ -114,6 +205,61 @@ def add_CryoEngineServicer_to_server(servicer, server):
                     request_deserializer=cryo__pb2.ControlRequest.FromString,
                     response_serializer=cryo__pb2.Empty.SerializeToString,
             ),
+            'FastStep': grpc.unary_unary_rpc_method_handler(
+                    servicer.FastStep,
+                    request_deserializer=cryo__pb2.FastStepRequest.FromString,
+                    response_serializer=cryo__pb2.FastStepResponse.SerializeToString,
+            ),
+            'Consolidate': grpc.unary_unary_rpc_method_handler(
+                    servicer.Consolidate,
+                    request_deserializer=cryo__pb2.ConsolidateRequest.FromString,
+                    response_serializer=cryo__pb2.ConsolidateResponse.SerializeToString,
+            ),
+            'SpawnEntity': grpc.unary_unary_rpc_method_handler(
+                    servicer.SpawnEntity,
+                    request_deserializer=cryo__pb2.SpawnEntityRequest.FromString,
+                    response_serializer=cryo__pb2.SpawnEntityResponse.SerializeToString,
+            ),
+            'RemoveEntity': grpc.unary_unary_rpc_method_handler(
+                    servicer.RemoveEntity,
+                    request_deserializer=cryo__pb2.RemoveEntityRequest.FromString,
+                    response_serializer=cryo__pb2.Empty.SerializeToString,
+            ),
+            'RelateEntities': grpc.unary_unary_rpc_method_handler(
+                    servicer.RelateEntities,
+                    request_deserializer=cryo__pb2.RelateEntitiesRequest.FromString,
+                    response_serializer=cryo__pb2.Empty.SerializeToString,
+            ),
+            'PredictNextState': grpc.unary_unary_rpc_method_handler(
+                    servicer.PredictNextState,
+                    request_deserializer=cryo__pb2.PredictNextStateRequest.FromString,
+                    response_serializer=cryo__pb2.PredictNextStateResponse.SerializeToString,
+            ),
+            'SimulateWhatIf': grpc.unary_unary_rpc_method_handler(
+                    servicer.SimulateWhatIf,
+                    request_deserializer=cryo__pb2.SimulateWhatIfRequest.FromString,
+                    response_serializer=cryo__pb2.SimulateWhatIfResponse.SerializeToString,
+            ),
+            'PlanTrajectory': grpc.unary_unary_rpc_method_handler(
+                    servicer.PlanTrajectory,
+                    request_deserializer=cryo__pb2.PlanTrajectoryRequest.FromString,
+                    response_serializer=cryo__pb2.PlanTrajectoryResponse.SerializeToString,
+            ),
+            'GetAgentPerspective': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetAgentPerspective,
+                    request_deserializer=cryo__pb2.GetAgentPerspectiveRequest.FromString,
+                    response_serializer=cryo__pb2.GetAgentPerspectiveResponse.SerializeToString,
+            ),
+            'GetReport': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetReport,
+                    request_deserializer=cryo__pb2.ReportRequest.FromString,
+                    response_serializer=cryo__pb2.ReportResponse.SerializeToString,
+            ),
+            'RetrieveMemory': grpc.unary_unary_rpc_method_handler(
+                    servicer.RetrieveMemory,
+                    request_deserializer=cryo__pb2.RetrieveMemoryRequest.FromString,
+                    response_serializer=cryo__pb2.RetrieveMemoryResponse.SerializeToString,
+            ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
             'cryo.CryoEngine', rpc_method_handlers)
@@ -123,63 +269,9 @@ def add_CryoEngineServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class CryoEngine(object):
-    """── Service ───────────────────────────────────────────────────
+    """── Service ──────────────────────────────────────────────────
 
     """
-
-    @staticmethod
-    def FastStep(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/cryo.CryoEngine/FastStep',
-            cryo__pb2.FastStepRequest.SerializeToString,
-            cryo__pb2.FastStepResponse.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
-
-    @staticmethod
-    def GetReport(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/cryo.CryoEngine/GetReport',
-            cryo__pb2.ReportRequest.SerializeToString,
-            cryo__pb2.ReportResponse.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
 
     @staticmethod
     def CreateSession(request,
@@ -225,6 +317,303 @@ class CryoEngine(object):
             '/cryo.CryoEngine/SetControl',
             cryo__pb2.ControlRequest.SerializeToString,
             cryo__pb2.Empty.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def FastStep(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/cryo.CryoEngine/FastStep',
+            cryo__pb2.FastStepRequest.SerializeToString,
+            cryo__pb2.FastStepResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def Consolidate(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/cryo.CryoEngine/Consolidate',
+            cryo__pb2.ConsolidateRequest.SerializeToString,
+            cryo__pb2.ConsolidateResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def SpawnEntity(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/cryo.CryoEngine/SpawnEntity',
+            cryo__pb2.SpawnEntityRequest.SerializeToString,
+            cryo__pb2.SpawnEntityResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def RemoveEntity(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/cryo.CryoEngine/RemoveEntity',
+            cryo__pb2.RemoveEntityRequest.SerializeToString,
+            cryo__pb2.Empty.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def RelateEntities(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/cryo.CryoEngine/RelateEntities',
+            cryo__pb2.RelateEntitiesRequest.SerializeToString,
+            cryo__pb2.Empty.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def PredictNextState(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/cryo.CryoEngine/PredictNextState',
+            cryo__pb2.PredictNextStateRequest.SerializeToString,
+            cryo__pb2.PredictNextStateResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def SimulateWhatIf(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/cryo.CryoEngine/SimulateWhatIf',
+            cryo__pb2.SimulateWhatIfRequest.SerializeToString,
+            cryo__pb2.SimulateWhatIfResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def PlanTrajectory(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/cryo.CryoEngine/PlanTrajectory',
+            cryo__pb2.PlanTrajectoryRequest.SerializeToString,
+            cryo__pb2.PlanTrajectoryResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetAgentPerspective(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/cryo.CryoEngine/GetAgentPerspective',
+            cryo__pb2.GetAgentPerspectiveRequest.SerializeToString,
+            cryo__pb2.GetAgentPerspectiveResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetReport(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/cryo.CryoEngine/GetReport',
+            cryo__pb2.ReportRequest.SerializeToString,
+            cryo__pb2.ReportResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def RetrieveMemory(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/cryo.CryoEngine/RetrieveMemory',
+            cryo__pb2.RetrieveMemoryRequest.SerializeToString,
+            cryo__pb2.RetrieveMemoryResponse.FromString,
             options,
             channel_credentials,
             insecure,
